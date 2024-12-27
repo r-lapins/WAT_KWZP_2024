@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6AC38B18-0963-4736-A7AB-AEB1E34DC260}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IDEA.Logistyka</RootNamespace>
+    <AssemblyName>IDEA.Logistyka</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>C:\Users\lapin\AppData\Local\Temp\vs9659.tmp\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>C:\Users\lapin\AppData\Local\Temp\vs9659.tmp\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\TypAsortymentu.cs" />
+    <Compile Include="Models\AsortymentDGV.cs" />
+    <Compile Include="Models\MagazynChart.cs" />
+    <Compile Include="Models\MagazynCmb.cs" />
+    <Compile Include="Models\MagazynZawartosc.cs" />
+    <Compile Include="Models\MaterialyList.cs" />
+    <Compile Include="Models\NowyMagazyn.cs" />
+    <Compile Include="Models\OczekujaceCheckResponse.cs" />
+    <Compile Include="Models\OczekujaceDGV.cs" />
+    <Compile Include="Models\PojazdCmb.cs" />
+    <Compile Include="Models\PolkaDGV.cs" />
+    <Compile Include="Models\PracownicyCmb.cs" />
+    <Compile Include="Models\ProduktList.cs" />
+    <Compile Include="Models\SekcjaAdd.cs" />
+    <Compile Include="Models\SekcjaDGV.cs" />
+    <Compile Include="Models\SkladZlecenieMagazynoweDGV.cs" />
+    <Compile Include="Models\TypyZasobowChart.cs" />
+    <Compile Include="Models\TypZasobuCmb.cs" />
+    <Compile Include="Models\TypZasobuPowierzchniaRobocza.cs" />
+    <Compile Include="Models\ZlecenieMagazynoweDGV.cs" />
+    <Compile Include="Services\AsortymentService.cs" />
+    <Compile Include="Services\AssortmentListService.cs" />
+    <Compile Include="Services\DodajDoTypuZasobuService.cs" />
+    <Compile Include="Services\MagazynService.cs" />
+    <Compile Include="Services\Oczekujace\AssortmentTypeRegisteredChecker.cs" />
+    <Compile Include="Services\Oczekujace\MagazynSekcjaTypeChecker.cs" />
+    <Compile Include="Services\Oczekujace\OczekujaceService.cs" />
+    <Compile Include="Services\Oczekujace\ShelfChecker.cs" />
+    <Compile Include="Services\PolkaService.cs" />
+    <Compile Include="Services\PrzypiszTypZasobuService.cs" />
+    <Compile Include="Services\SekcjaService.cs" />
+    <Compile Include="Services\TransportWewnetrzny\DodanieAsortymentuDoPolek.cs" />
+    <Compile Include="Services\TransportWewnetrzny\PojazdCheck.cs" />
+    <Compile Include="Services\TransportWewnetrzny\TransportWewnetrznyKonfiguracjaZleceniaService.cs" />
+    <Compile Include="Services\TransportWewnetrzny\TransportWewnetrznyService.cs" />
+    <Compile Include="Services\TypMaterialuChartService.cs" />
+    <Compile Include="Validators\DodajDoTypuZasobuValidator.cs" />
+    <Compile Include="Validators\DodajPoIlosciValidator.cs" />
+    <Compile Include="Validators\MagazynValidator.cs" />
+    <Compile Include="Models\MagazynDGV.cs" />
+    <Compile Include="Observer\ICommonSubscriber.cs" />
+    <Compile Include="Observer\CommonPublisher.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extensions\ValidationExtensions.cs" />
+    <Compile Include="Validators\SekcjaValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\IDEA.Database\IDEA.Database.csproj">
+      <Project>{e2534fb5-b9f9-4305-bb67-4ce6f3747b57}</Project>
+      <Name>IDEA.Database</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

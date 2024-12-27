@@ -1,0 +1,915 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DCC767E2-09EC-43B8-9B6E-3B7C63EE666B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>IDEA.App</RootNamespace>
+    <AssemblyName>IDEA.App</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publikuj\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>C:\Users\lapin\AppData\Local\Temp\vs959D.tmp\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>C:\Users\lapin\AppData\Local\Temp\vs959D.tmp\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\StagedStatus.cs" />
+    <Compile Include="Formularze\AF\AFFakturyCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFFakturyCU.Designer.cs">
+      <DependentUpon>AFFakturyCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFKosztyRozneCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFKosztyRozneCU.Designer.cs">
+      <DependentUpon>AFKosztyRozneCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFKosztyRozneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFKosztyRozneForm.Designer.cs">
+      <DependentUpon>AFKosztyRozneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFPracownicyCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFPracownicyCU.Designer.cs">
+      <DependentUpon>AFPracownicyCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFPracownicyJezykiCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFPracownicyJezykiCU.Designer.cs">
+      <DependentUpon>AFPracownicyJezykiCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFPracownicyZatrudnienieCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFPracownicyZatrudnienieCU.Designer.cs">
+      <DependentUpon>AFPracownicyZatrudnienieCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFPracownicyRodzajUmowyCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFPracownicyRodzajUmowyCU.Designer.cs">
+      <DependentUpon>AFPracownicyRodzajUmowyCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFPracownicyStanowiskoCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFPracownicyStanowiskoCU.Designer.cs">
+      <DependentUpon>AFPracownicyStanowiskoCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFPracownicyDzialyCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFPracownicyDzialyCU.Designer.cs">
+      <DependentUpon>AFPracownicyDzialyCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFSrodkiMajatkoweCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFSrodkiMajatkoweCU.Designer.cs">
+      <DependentUpon>AFSrodkiMajatkoweCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFSrodkiMajatkoweForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFSrodkiMajatkoweForm.Designer.cs">
+      <DependentUpon>AFSrodkiMajatkoweForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFKlienciCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFKlienciCU.Designer.cs">
+      <DependentUpon>AFKlienciCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFFakturyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFFakturyForm.Designer.cs">
+      <DependentUpon>AFFakturyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFUrlopy2CU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFUrlopy2CU.Designer.cs">
+      <DependentUpon>AFUrlopy2CU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFUrlopyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFUrlopyForm.Designer.cs">
+      <DependentUpon>AFUrlopyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFPracownicyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFPracownicyForm.Designer.cs">
+      <DependentUpon>AFPracownicyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFBilansForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFBilansForm.Designer.cs">
+      <DependentUpon>AFBilansForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFZamowieniaSkladCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFZamowieniaSkladCU.Designer.cs">
+      <DependentUpon>AFZamowieniaSkladCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFZamowieniaCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFZamowieniaCU.Designer.cs">
+      <DependentUpon>AFZamowieniaCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFZamowieniaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFZamowieniaForm.Designer.cs">
+      <DependentUpon>AFZamowieniaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFKlienciForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFKlienciForm.Designer.cs">
+      <DependentUpon>AFKlienciForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\AF\AFZamowieniaStatusCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\AF\AFZamowieniaStatusCU.Designer.cs">
+      <DependentUpon>AFZamowieniaStatusCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Dostawy\DostawyDodajForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Dostawy\DostawyDodajForm.Designer.cs">
+      <DependentUpon>DostawyDodajForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Dostawy\DostawyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Dostawy\DostawyForm.Designer.cs">
+      <DependentUpon>DostawyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\DodajMagazynForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\DodajMagazynForm.Designer.cs">
+      <DependentUpon>DodajMagazynForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\InitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\InitForm.Designer.cs">
+      <DependentUpon>InitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\DodajSekcjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\DodajSekcjeForm.Designer.cs">
+      <DependentUpon>DodajSekcjeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\EdytujMagazynForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\EdytujMagazynForm.Designer.cs">
+      <DependentUpon>EdytujMagazynForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\EdytujSekcjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\EdytujSekcjeForm.Designer.cs">
+      <DependentUpon>EdytujSekcjeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\MagazynForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\MagazynForm.Designer.cs">
+      <DependentUpon>MagazynForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\Oczekujace\DodajDoTypuZasobuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\Oczekujace\DodajDoTypuZasobuForm.Designer.cs">
+      <DependentUpon>DodajDoTypuZasobuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\Oczekujace\DodajPoIlosciForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\Oczekujace\DodajPoIlosciForm.Designer.cs">
+      <DependentUpon>DodajPoIlosciForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\Oczekujace\OczekujaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\Oczekujace\OczekujaceForm.Designer.cs">
+      <DependentUpon>OczekujaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\Oczekujace\PrzypiszTypZasobuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\Oczekujace\PrzypiszTypZasobuForm.Designer.cs">
+      <DependentUpon>PrzypiszTypZasobuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\Sekcja\AsortymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\Sekcja\AsortymentForm.Designer.cs">
+      <DependentUpon>AsortymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\Sekcja\DodajPolkaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\Sekcja\DodajPolkaForm.Designer.cs">
+      <DependentUpon>DodajPolkaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\Sekcja\SekcjaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\Sekcja\SekcjaForm.Designer.cs">
+      <DependentUpon>SekcjaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\TypMaterialuChart\TypMaterialuChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\TypMaterialuChart\TypMaterialuChartForm.Designer.cs">
+      <DependentUpon>TypMaterialuChartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\TypMaterialuChart\TypMaterialuOpcjeChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Magazyn\TypMaterialuChart\TypMaterialuOpcjeChartForm.Designer.cs">
+      <DependentUpon>TypMaterialuOpcjeChartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Pojazdy\DodajModelPojazduForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Pojazdy\DodajModelPojazduForm.Designer.cs">
+      <DependentUpon>DodajModelPojazduForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Pojazdy\DodajPojazdForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Pojazdy\DodajPojazdForm.Designer.cs">
+      <DependentUpon>DodajPojazdForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Pojazdy\DodajPrzegladForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Pojazdy\DodajPrzegladForm.Designer.cs">
+      <DependentUpon>DodajPrzegladForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Pojazdy\DodajUbezpieczenieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Pojazdy\DodajUbezpieczenieForm.Designer.cs">
+      <DependentUpon>DodajUbezpieczenieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Pojazdy\PrzegladyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Pojazdy\PrzegladyForm.Designer.cs">
+      <DependentUpon>PrzegladyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Pojazdy\UbezpieczenieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Pojazdy\UbezpieczenieForm.Designer.cs">
+      <DependentUpon>UbezpieczenieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Transport wewnetrzny\DodajIloscSkladZleceniaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Transport wewnetrzny\DodajIloscSkladZleceniaForm.Designer.cs">
+      <DependentUpon>DodajIloscSkladZleceniaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Transport wewnetrzny\DodajTransportWewnetrznyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Transport wewnetrzny\DodajTransportWewnetrznyForm.Designer.cs">
+      <DependentUpon>DodajTransportWewnetrznyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Transport wewnetrzny\SkladZamowieniaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Transport wewnetrzny\SkladZamowieniaForm.Designer.cs">
+      <DependentUpon>SkladZamowieniaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Transport wewnetrzny\TransportWewnetrznyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Transport wewnetrzny\TransportWewnetrznyForm.Designer.cs">
+      <DependentUpon>TransportWewnetrznyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Transport wewnetrzny\TransportWewnetrznyKonfiguracjaZleceniaMagazynProdukcjiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Transport wewnetrzny\TransportWewnetrznyKonfiguracjaZleceniaMagazynProdukcjiForm.Designer.cs">
+      <DependentUpon>TransportWewnetrznyKonfiguracjaZleceniaMagazynProdukcjiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Transport wewnetrzny\TransportWewnetrznyPodsumowanie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Transport wewnetrzny\TransportWewnetrznyPodsumowanie.Designer.cs">
+      <DependentUpon>TransportWewnetrznyPodsumowanie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\NarzedziaFormCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\NarzedziaFormCU.Designer.cs">
+      <DependentUpon>NarzedziaFormCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDEADataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IDEADataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DodajPolkaInput.cs" />
+    <Compile Include="Models\MagazynZawartoscTransport.cs" />
+    <Compile Include="Models\TransportDGV.cs" />
+    <Compile Include="Models\TransportWewnetrznyInput.cs" />
+    <Compile Include="Formularze\Logistyka\Transport wewnetrzny\TransportWewnetrznyKonfiguracjaZlecenia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Transport wewnetrzny\TransportWewnetrznyKonfiguracjaZlecenia.Designer.cs">
+      <DependentUpon>TransportWewnetrznyKonfiguracjaZlecenia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Wysylki\WysylkiDodajForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Wysylki\WysylkiDodajForm.Designer.cs">
+      <DependentUpon>WysylkiDodajForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Wysylki\WysylkiEdytujForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Wysylki\WysylkiEdytujForm.Designer.cs">
+      <DependentUpon>WysylkiEdytujForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Wysylki\WysylkiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Wysylki\WysylkiForm.Designer.cs">
+      <DependentUpon>WysylkiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\DokumentacjaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\DokumentacjaForm.Designer.cs">
+      <DependentUpon>DokumentacjaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\KontrolaJakosciFormCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\KontrolaJakosciFormCU.Designer.cs">
+      <DependentUpon>KontrolaJakosciFormCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\MaterialCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\MaterialCU.Designer.cs">
+      <DependentUpon>MaterialCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\MaterialyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\MaterialyForm.Designer.cs">
+      <DependentUpon>MaterialyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\NarzedziaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\NarzedziaForm.Designer.cs">
+      <DependentUpon>NarzedziaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\ObslugaMaszynForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\ObslugaMaszynForm.Designer.cs">
+      <DependentUpon>ObslugaMaszynForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\ProcesyTechnologiczneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\ProcesyTechnologiczneForm.Designer.cs">
+      <DependentUpon>ProcesyTechnologiczneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\ProduktyCUForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\ProduktyCUForm.Designer.cs">
+      <DependentUpon>ProduktyCUForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\ProduktyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\ProduktyForm.Designer.cs">
+      <DependentUpon>ProduktyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\DodajModelMaszynyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\DodajModelMaszynyForm.Designer.cs">
+      <DependentUpon>DodajModelMaszynyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\EksploatacjaMaszynForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\EksploatacjaMaszynForm.Designer.cs">
+      <DependentUpon>EksploatacjaMaszynForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\ProdukcjaKonczenieProdukcjiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\ProdukcjaKonczenieProdukcjiForm.Designer.cs">
+      <DependentUpon>ProdukcjaKonczenieProdukcjiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\RaportPracyPracownikowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\RaportPracyPracownikowForm.Designer.cs">
+      <DependentUpon>RaportPracyPracownikowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\RodzajProduktuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\RodzajProduktuForm.Designer.cs">
+      <DependentUpon>RodzajProduktuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\WlasciwosciMaterialuCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\WlasciwosciMaterialuCU.Designer.cs">
+      <DependentUpon>WlasciwosciMaterialuCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\ZleceniaMagazynoweForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\ZleceniaMagazynoweForm.Designer.cs">
+      <DependentUpon>ZleceniaMagazynoweForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\KontrolaJakosciForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\KontrolaJakosciForm.Designer.cs">
+      <DependentUpon>KontrolaJakosciForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\MaszynyCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\MaszynyCU.Designer.cs">
+      <DependentUpon>MaszynyCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Pojazdy\PojazdyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Logistyka\Pojazdy\PojazdyForm.Designer.cs">
+      <DependentUpon>PojazdyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\MaszynyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\MaszynyForm.Designer.cs">
+      <DependentUpon>MaszynyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\PlanowanieProcesyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\PlanowanieProcesyForm.Designer.cs">
+      <DependentUpon>PlanowanieProcesyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\RodzajMaszynyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\RodzajMaszynyForm.Designer.cs">
+      <DependentUpon>RodzajMaszynyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\ZwrotzKontroliJakosciForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\ZwrotzKontroliJakosciForm.Designer.cs">
+      <DependentUpon>ZwrotzKontroliJakosciForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxes\CustomMessageBox.cs" />
+    <Compile Include="Factories\NewPanelFactory.cs" />
+    <Compile Include="Models\AsortymentListInput.cs" />
+    <Compile Include="Models\AsortymentListOutput.cs" />
+    <Compile Include="Models\DodajDoTypuZasobuOutput.cs" />
+    <Compile Include="Models\DodajIloscSkladZleceniaInput.cs" />
+    <Compile Include="Models\DodajIloscSkladZleceniaOutput.cs" />
+    <Compile Include="Models\DodajPoIlosciOutput.cs" />
+    <Compile Include="Models\DodajPoIlosciInput.cs" />
+    <Compile Include="Models\DodajTransportWewnetrznyInput.cs" />
+    <Compile Include="Models\ListaZamowieniaProdukcja.cs" />
+    <Compile Include="Models\MagazynOpen.cs" />
+    <Compile Include="Models\MaterialydoProcesu.cs" />
+    <Compile Include="Models\MaterialywMagazynie.cs" />
+    <Compile Include="Models\ModifySekcja.cs" />
+    <Compile Include="Models\Normy_PP.cs" />
+    <Compile Include="Models\ObecneProcesy.cs" />
+    <Compile Include="Models\OczekujaceInput.cs" />
+    <Compile Include="Models\PodgladMaterialu.cs" />
+    <Compile Include="Models\PrzypiszTypZasobuInput.cs" />
+    <Compile Include="Models\SekcjaOpen.cs" />
+    <Compile Include="Models\ShelfCheckerResult.cs" />
+    <Compile Include="Models\SkladZamowieniaInput.cs" />
+    <Compile Include="Models\TransportWewnetrznyKonfiguracjaZleceniaInput.cs" />
+    <Compile Include="Models\TransportWewnetrznyPodsumowanieInput.cs" />
+    <Compile Include="Models\TypMaterialuChartInput.cs" />
+    <Compile Include="Models\TypMaterialuChartOpen.cs" />
+    <Compile Include="Models\TypMaterialuOpcjeChartInput.cs" />
+    <Compile Include="Models\TypMaterialuOpcjeChartOutput.cs" />
+    <Compile Include="Models\WlasciwosciMaterialu.cs" />
+    <Compile Include="Models\ZlecenieMagazynoweProduktProdukcja.cs" />
+    <Compile Include="Observer\IOpenNewPanelSubscriber.cs" />
+    <Compile Include="Observer\OpenPanelPublisher.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Formularze\Produkcja\ZarzadzanieProdukcjaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\Produkcja\ZarzadzanieProdukcjaForm.Designer.cs">
+      <DependentUpon>ZarzadzanieProdukcjaForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Formularze\AF\AFFakturyCU.resx">
+      <DependentUpon>AFFakturyCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFKosztyRozneCU.resx">
+      <DependentUpon>AFKosztyRozneCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFKosztyRozneForm.resx">
+      <DependentUpon>AFKosztyRozneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFPracownicyCU.resx">
+      <DependentUpon>AFPracownicyCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFPracownicyJezykiCU.resx">
+      <DependentUpon>AFPracownicyJezykiCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFPracownicyZatrudnienieCU.resx">
+      <DependentUpon>AFPracownicyZatrudnienieCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFPracownicyRodzajUmowyCU.resx">
+      <DependentUpon>AFPracownicyRodzajUmowyCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFPracownicyStanowiskoCU.resx">
+      <DependentUpon>AFPracownicyStanowiskoCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFPracownicyDzialyCU.resx">
+      <DependentUpon>AFPracownicyDzialyCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFSrodkiMajatkoweCU.resx">
+      <DependentUpon>AFSrodkiMajatkoweCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFSrodkiMajatkoweForm.resx">
+      <DependentUpon>AFSrodkiMajatkoweForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFKlienciCU.resx">
+      <DependentUpon>AFKlienciCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFFakturyForm.resx">
+      <DependentUpon>AFFakturyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFUrlopyForm.resx">
+      <DependentUpon>AFUrlopyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFPracownicyForm.resx">
+      <DependentUpon>AFPracownicyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFBilansForm.resx">
+      <DependentUpon>AFBilansForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFZamowieniaSkladCU.resx">
+      <DependentUpon>AFZamowieniaSkladCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFZamowieniaCU.resx">
+      <DependentUpon>AFZamowieniaCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFZamowieniaForm.resx">
+      <DependentUpon>AFZamowieniaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\AF\AFKlienciForm.resx">
+      <DependentUpon>AFKlienciForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Dostawy\DostawyDodajForm.resx">
+      <DependentUpon>DostawyDodajForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Dostawy\DostawyForm.resx">
+      <DependentUpon>DostawyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Magazyn\DodajMagazynForm.resx">
+      <DependentUpon>DodajMagazynForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\InitForm.resx">
+      <DependentUpon>InitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Magazyn\DodajSekcjeForm.resx">
+      <DependentUpon>DodajSekcjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Magazyn\EdytujMagazynForm.resx">
+      <DependentUpon>EdytujMagazynForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Magazyn\EdytujSekcjeForm.resx">
+      <DependentUpon>EdytujSekcjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Magazyn\MagazynForm.resx">
+      <DependentUpon>MagazynForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Magazyn\Oczekujace\DodajDoTypuZasobuForm.resx">
+      <DependentUpon>DodajDoTypuZasobuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Magazyn\Oczekujace\DodajPoIlosciForm.resx">
+      <DependentUpon>DodajPoIlosciForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Magazyn\Oczekujace\OczekujaceForm.resx">
+      <DependentUpon>OczekujaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Magazyn\Oczekujace\PrzypiszTypZasobuForm.resx">
+      <DependentUpon>PrzypiszTypZasobuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Magazyn\Sekcja\AsortymentForm.resx">
+      <DependentUpon>AsortymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Magazyn\Sekcja\DodajPolkaForm.resx">
+      <DependentUpon>DodajPolkaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Magazyn\Sekcja\SekcjaForm.resx">
+      <DependentUpon>SekcjaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Magazyn\TypMaterialuChart\TypMaterialuOpcjeChartForm.resx">
+      <DependentUpon>TypMaterialuOpcjeChartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Pojazdy\DodajModelPojazduForm.resx">
+      <DependentUpon>DodajModelPojazduForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Pojazdy\DodajPojazdForm.resx">
+      <DependentUpon>DodajPojazdForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Pojazdy\DodajPrzegladForm.resx">
+      <DependentUpon>DodajPrzegladForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Pojazdy\DodajUbezpieczenieForm.resx">
+      <DependentUpon>DodajUbezpieczenieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Pojazdy\PrzegladyForm.resx">
+      <DependentUpon>PrzegladyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Pojazdy\UbezpieczenieForm.resx">
+      <DependentUpon>UbezpieczenieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Transport wewnetrzny\DodajIloscSkladZleceniaForm.resx">
+      <DependentUpon>DodajIloscSkladZleceniaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Transport wewnetrzny\DodajTransportWewnetrznyForm.resx">
+      <DependentUpon>DodajTransportWewnetrznyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Transport wewnetrzny\SkladZamowieniaForm.resx">
+      <DependentUpon>SkladZamowieniaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Transport wewnetrzny\TransportWewnetrznyKonfiguracjaZlecenia.resx">
+      <DependentUpon>TransportWewnetrznyKonfiguracjaZlecenia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Transport wewnetrzny\TransportWewnetrznyKonfiguracjaZleceniaMagazynProdukcjiForm.resx">
+      <DependentUpon>TransportWewnetrznyKonfiguracjaZleceniaMagazynProdukcjiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Transport wewnetrzny\TransportWewnetrznyPodsumowanie.resx">
+      <DependentUpon>TransportWewnetrznyPodsumowanie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Wysylki\WysylkiDodajForm.resx">
+      <DependentUpon>WysylkiDodajForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Wysylki\WysylkiEdytujForm.resx">
+      <DependentUpon>WysylkiEdytujForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Wysylki\WysylkiForm.resx">
+      <DependentUpon>WysylkiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Magazyn\TypMaterialuChart\TypMaterialuChartForm.resx">
+      <DependentUpon>TypMaterialuChartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Transport wewnetrzny\TransportWewnetrznyForm.resx">
+      <DependentUpon>TransportWewnetrznyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\NarzedziaFormCU.resx">
+      <DependentUpon>NarzedziaFormCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\DokumentacjaForm.resx">
+      <DependentUpon>DokumentacjaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\KontrolaJakosciFormCU.resx">
+      <DependentUpon>KontrolaJakosciFormCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\MaterialCU.resx">
+      <DependentUpon>MaterialCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\MaterialyForm.resx">
+      <DependentUpon>MaterialyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\NarzedziaForm.resx">
+      <DependentUpon>NarzedziaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\ObslugaMaszynForm.resx">
+      <DependentUpon>ObslugaMaszynForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\ProcesyTechnologiczneForm.resx">
+      <DependentUpon>ProcesyTechnologiczneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\ProduktyCUForm.resx">
+      <DependentUpon>ProduktyCUForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\ProduktyForm.resx">
+      <DependentUpon>ProduktyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\DodajModelMaszynyForm.resx">
+      <DependentUpon>DodajModelMaszynyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\EksploatacjaMaszynForm.resx">
+      <DependentUpon>EksploatacjaMaszynForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\ProdukcjaKonczenieProdukcjiForm.resx">
+      <DependentUpon>ProdukcjaKonczenieProdukcjiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\RaportPracyPracownikowForm.resx">
+      <DependentUpon>RaportPracyPracownikowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\RodzajProduktuForm.resx">
+      <DependentUpon>RodzajProduktuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\WlasciwosciMaterialuCU.resx">
+      <DependentUpon>WlasciwosciMaterialuCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\ZleceniaMagazynoweForm.resx">
+      <DependentUpon>ZleceniaMagazynoweForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\KontrolaJakosciForm.resx">
+      <DependentUpon>KontrolaJakosciForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\MaszynyCU.resx">
+      <DependentUpon>MaszynyCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\MaszynyForm.resx">
+      <DependentUpon>MaszynyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Logistyka\Pojazdy\PojazdyForm.resx">
+      <DependentUpon>PojazdyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\PlanowanieProcesyForm.resx">
+      <DependentUpon>PlanowanieProcesyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\RodzajMaszynyForm.resx">
+      <DependentUpon>RodzajMaszynyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularze\Produkcja\ZwrotzKontroliJakosciForm.resx">
+      <DependentUpon>ZwrotzKontroliJakosciForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Formularze\Produkcja\ZarzadzanieProdukcjaForm.resx">
+      <DependentUpon>ZarzadzanieProdukcjaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="IDEADataSet.xsc">
+      <DependentUpon>IDEADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IDEADataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IDEADataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IDEADataSet.xss">
+      <DependentUpon>IDEADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dzialy\IDEA.AF\IDEA.AF.csproj">
+      <Project>{53ddee23-8012-42cc-b524-6ca369abe520}</Project>
+      <Name>IDEA.AF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dzialy\IDEA.Logistyka\IDEA.Logistyka.csproj">
+      <Project>{6ac38b18-0963-4736-a7ab-aeb1e34dc260}</Project>
+      <Name>IDEA.Logistyka</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dzialy\IDEA.Produkcja\IDEA.Produkcja.csproj">
+      <Project>{15308355-df56-4170-bd32-f34935e001c8}</Project>
+      <Name>IDEA.Produkcja</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IDEA.Database\IDEA.Database.csproj">
+      <Project>{e2534fb5-b9f9-4305-bb67-4ce6f3747b57}</Project>
+      <Name>IDEA.Database</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 i x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="idea_logo.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
