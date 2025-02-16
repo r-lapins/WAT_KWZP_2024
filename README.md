@@ -19,3 +19,5 @@ This is a **university project** developed as part of a coursework assignment. T
 ## System Requirements
 - Microsoft SQL Server  
 - Visual Studio 2022+
+
+![Logo](app_view.png)
