@@ -20,8 +20,18 @@ This is a **university project** developed as part of a coursework assignment. T
 - Microsoft SQL Server  
 - Visual Studio 2022+
 
-### Application view preview
+#
+
+## Application view preview
 ![Logo](app_view.png)
 
-### Database diagram preview
+![Logo](app_view_2.png)
+
+![Logo](app_view_3.png)
+
+#
+
+## Database diagram preview
 ![Logo](database_diagram.png)
+
+#
